@@ -19,7 +19,6 @@ print(basemap_layer)
 
 # --- Define Bounding Box (Region of Interest) ---
 # Determine the bounding box for the area of interest.
-# If a user has drawn a region of interest (ROI) on the map, use those coordinates.
 # Otherwise, default to a predefined bounding box for the state of Delaware.
 if m.user_roi_bounds() is not None:
     bbox = m.user_roi_bounds()
@@ -113,7 +112,7 @@ for i in range(len(small_boxes)):
   # 'overwrite=True' ensures that previous files with the same name are replaced.
   tms_to_geotiff(output=image_filename, bbox=small_boxes[i], zoom=13, source="Satellite", overwrite=True)
   print(f"Downloaded image for small box {i+1}: {image_filename}")
-
+ 
   # 2. Generate Segmentation Mask using SAM
   # Performs segmentation on the downloaded image to create a mask.
   # 'batch=True': Enables batch processing (though processing one image at a time here).
