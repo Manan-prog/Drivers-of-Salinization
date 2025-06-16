@@ -7,7 +7,7 @@ var table2 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Bou
 var table3 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Boundaries_1_3");
 var table4 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Boundaries_13_15");
 var table5 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Boundaries_10_12");
-
+ 
 // Load various Earth Engine Image assets for salinized farmlands.
 // These images are pre-processed spectrally unmixed salt patch raster layers for 5 years: 2019-2023
 var image = ee.Image("path to asset");
