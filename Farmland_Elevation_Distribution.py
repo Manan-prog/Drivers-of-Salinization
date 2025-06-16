@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt # For creating static, animated, and interactive
 # --- 1. Data Loading ---
 
 # Load the CSV file into a pandas DataFrame.
-# This file is expected to contain various spatial properties for 2023.
+# This file contain various spatial properties for 2023.
 df_spatial_properties_2023 = pd.read_csv('2023_SpatialProperties_extracted_data.csv')
 
 # Extract the 'average_elevation' column into a separate pandas Series.
@@ -15,7 +15,7 @@ elevation_data = df_spatial_properties_2023['average_elevation']
 # --- 2. Data Analysis: Mean Calculation ---
 
 # Calculate the mean (average) value of the elevation data.
-# This will be used to draw a vertical line on the histogram for reference.
+# This will draw a vertical line on the histogram for reference.
 mean_elevation = elevation_data.mean()
 
 # --- 3. Histogram Bin Definition ---
