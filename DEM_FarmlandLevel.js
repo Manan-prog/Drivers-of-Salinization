@@ -2,7 +2,7 @@
 // within each parcel using USGS 3DEP 1m DEM data.
 // The results are then exported as a CSV file.
 
-// --- 1. Import Feature Collections and Image Collections ---
+// --- 1. Import Feature Collections and Image Collections --- 
 // Define the input feature collections representing salt-impacted farmland boundaries
 // These collections are organized by simply grouped shapefiles that altogether cover the state of Delaware.
 var farmlandBoundaries_10_12 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Boundaries_10_12");
