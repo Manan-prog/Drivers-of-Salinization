@@ -1,7 +1,7 @@
 // --- Farmland NDVI Calculation and Export ---
 // This script processes Sentinel-2 satellite imagery to calculate the Normalized Difference Vegetation Index (NDVI)
 // for specific farmland areas, applies cloud masking, and exports the median NDVI image for a defined period.
-
+ 
 // --- Data Loading ---
 
 // Load pre-existing FeatureCollections representing salt-impacted farmland boundaries.
