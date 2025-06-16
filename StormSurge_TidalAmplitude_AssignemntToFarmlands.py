@@ -1,24 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-StormSurgeData_AssignmentToFarmlands
-
-This script processes storm surge data (low tide, high tide) and assigns it
-to specific farmland locations based on geographical proximity. It then calculates
-the amplitude of the storm waves and the storm event magnitude (overwash)
-relative to farmland elevation.
-"""
 
 # --- 1. Setup Environment and Import Libraries ---
-
-import pandas as pd
-from geopy.distance import geodesic # Used for calculating accurate distances between lat/lon points
-from tqdm import tqdm               # Provides a progress bar for loops
-import numpy as np                  # For numerical operations
 
 # Mount Google Drive to access files in the Colab environment.
 # This command is specific to Google Colab.
 from google.colab import drive
 drive.mount('/content/drive')
+
+import pandas as pd
+from geopy.distance import geodesic # Used for calculating accurate distances between lat/lon points
+from tqdm import tqdm               # Provides a progress bar for loops
+import numpy as np                  # For numerical operations
 
 # Change the current working directory.
 # This makes it easier to reference input/output files without full paths.
@@ -97,7 +88,7 @@ df_farmland.to_csv('InterpolatedLowtide_Assigned.csv', index=False)
 print("\nFirst few rows of Farmland Data with Assigned Low Tide:")
 print(df_farmland.head())
 
-# --- 3. Calculate Amplitude (Intensity) of Storm Waves ---
+# --- 3. Calculate Amplitude (Intensity) of Tidal Waves ---
 
 # Change the working directory to the results folder for output.
 %cd /content/drive/MyDrive/Chapter2/Storm_Surge/Code_Data/Results
@@ -123,7 +114,7 @@ amplitude_data = hightide_values.subtract(lowtide_values)
 # Combine the latitude/longitude columns with the calculated amplitude time series.
 df_amplitude_result = pd.concat([InterpolatedHightide_Assigned[lat_lon_columns], amplitude_data], axis=1)
 
-# Save the resulting DataFrame containing storm wave amplitude to a CSV file.
+# Save the resulting DataFrame containing tidal wave amplitude to a CSV file.
 df_amplitude_result.to_csv('Amplitude_Wave_Assigned.csv', index=False)
 print("\nAmplitude Wave Data saved to: Amplitude_Wave_Assigned.csv")
 print("First few rows of Amplitude Data:")
@@ -147,7 +138,7 @@ farmland_elevations = df_dem.iloc[:, 2].values
 # InterpolatedHightide_Assigned = pd.read_csv('InterpolatedHightide_Assigned.csv')
 hightide_values_for_storm_event = InterpolatedHightide_Assigned.iloc[:, 2:].values
 
-# Calculate the storm event (overwash) by subtracting high tide from farmland elevation.
+# Calculate the storm event (tidal overwash) by subtracting high tide from farmland elevation.
 # A positive value indicates the farmland is above the high tide level,
 # a negative value indicates it is submerged (overwashed).
 # np.newaxis is used to make 'farmland_elevations' a 2D array for broadcast subtraction.
