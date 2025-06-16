@@ -1,5 +1,5 @@
 // This script calculates the distance from farmland parcel centroids to the nearest water body using the ESRI 2022 Land Cover data.
-
+ 
 // --- 1. Load Data ---
 // Load ESRI 2022 Land Cover image.
 var esri2022LandCover = ee.Image("users/manan_sarupria/ESRI_2022_AllLandCovers");
