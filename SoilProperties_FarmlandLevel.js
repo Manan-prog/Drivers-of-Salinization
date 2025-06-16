@@ -2,7 +2,7 @@
 // from Polaris Open Datasets for given salt-impacted farmland boundaries.
 // The extracted mean values for each property are added as attributes to the farmland features,
 // and the final dataset is exported as a CSV.
-
+ 
 // --- 1. Import Feature Collections and Image Collections ---
 // Load farmland boundary feature collections.
 var farmlandBoundaries_1_3 = ee.FeatureCollection("users/manan_sarupria/SaltImpactedFarmland_Boundaries_1_3");
